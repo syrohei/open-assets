@@ -23,6 +23,25 @@
     <!--[if lt IE 10]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
+    <nav class="navbar navbar-static-top navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" >
+          <span class="glyphicon glyphicon-home"></span>GenerateWallet</a>
+      </div>
+
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-6">
+        <ul class="nav navbar-nav">
+          <li><a ng-href="#/">Generate</a></li>
+          <li><a ng-href="#/scan">Scan</a></li>
+        </ul>
+
+        <ul class="nav navbar-nav navbar-right acme-navbar-text">
+          <li>Application was created {{ vm.relativeDate }}.</li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
     <div ui-view></div>
 

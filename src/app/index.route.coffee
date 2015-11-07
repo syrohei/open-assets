@@ -1,16 +1,15 @@
 angular.module "openAssets"
   .config ($stateProvider, $urlRouterProvider) ->
     $stateProvider
-      .state "home",
-        url: "/"
-        templateUrl: "app/main/main.html"
-        controller: "MainController"
-        controllerAs: "main"
-
       .state "generate",
-        url: "/generate"
+        url: "/"
         templateUrl: "app/generate/generate.html"
         controller: "GenerateController"
         controllerAs: "generate"
+      .state "scan",
+        url: "/scan"
+        templateUrl: "app/scan/scan.html"
+        controller: "ScanController"
+        controllerAs: "scan"
 
     $urlRouterProvider.otherwise '/'

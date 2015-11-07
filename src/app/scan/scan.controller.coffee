@@ -8,7 +8,7 @@ angular.module "openAssets"
     })
     return resource
 
-  .controller "GenerateController", ($scope, $timeout, webDevTec, toastr, GenerateAccount) ->
+  .controller "ScanController", ($scope, $timeout, webDevTec, toastr, GenerateAccount) ->
 
     $scope.generateAccount = ->
       GenerateAccount.post({"alias": "address label"}, (response, getResponseHeader) ->
@@ -17,6 +17,11 @@ angular.module "openAssets"
         $scope.bitcoin_address = response.bitcoin_address
         $scope.private_key = response.private_key
       )
+    $scope.onScanSuccess = (data) ->
+      $scope.scanData = data
+
+    $scope.onScanError = (error) ->
+      $scope.scanError = error
     
 
     vm = this
