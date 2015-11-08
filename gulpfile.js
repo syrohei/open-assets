@@ -31,7 +31,7 @@ gulp.task('lib', function(cb) {
 
 
 gulp.task('clean', function(cb){
-  del(['dist'],cb);
+  rimraf('dist',cb);
 });
 
 gulp.task('fonts', function() {
