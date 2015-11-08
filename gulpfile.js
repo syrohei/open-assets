@@ -36,7 +36,7 @@ gulp.task('clean', function(cb){
 
 gulp.task('fonts', function() {
   return gulp.src([
-    'bower_components/bootstrap-sass-official/assets/fonts/bootstrap/*'])
+    'bower_components/bootstrap/fonts/*'])
     .pipe(gulp.dest('dist/fonts/'));
 });
 /**
