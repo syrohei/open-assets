@@ -23,7 +23,7 @@ wrench.readdirSyncRecursive('./gulp').filter(function(file) {
   require('./gulp/' + file);
 });
 
-gulp.task('lib', function() {
+gulp.task('lib', function(cb) {
   return gulp.src([
     'src/app/lib/*.js'])
     .pipe(gulp.dest('dist/app/lib/'));
@@ -43,7 +43,7 @@ gulp.task('fonts', function() {
  *  Default task clean temporaries directories and launch the
  *  main optimization build task
  */
-gulp.task('default', ['clean','lib','fonts'], function () {
+gulp.task('default', ['clean','fonts','lib'], function () {
   gulp.start('build');
 });
 
