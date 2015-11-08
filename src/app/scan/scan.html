@@ -1,4 +1,4 @@
-<script src="app/scan/jsqrcode-combined.min.js"></script>
+<script src="app/lib/jsqrcode-combined.min.js"></script>
 
 <div class="container">
   <div> Created By CoinPrismAPI</div>
@@ -11,7 +11,7 @@
     <div>ScanStatus: {{scanError}}</div>
   </div>
 <div>
-  <qr-scanner width="400" height="300" ng-success="onScanSuccess(data)" ng-error="onScanError(error)" />
+  <qr-scanner ng-success="onScanSuccess(data)" ng-error="onScanError(error)" />
 
 </div>
 </div>

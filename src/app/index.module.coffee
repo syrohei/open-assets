@@ -1,1 +1,1 @@
-angular.module 'openAssets', ['qrScanner','monospaced.qrcode','ngAnimate','ngCookies','ngTouch','ngSanitize', 'ngResource','ui.router','ui.bootstrap']
+angular.module 'openAssets', ['ui.bootstrap', 'qrScanner','monospaced.qrcode','ngAnimate','ngCookies','ngTouch','ngSanitize', 'ngResource','ui.router','ui.bootstrap']

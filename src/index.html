@@ -5,6 +5,8 @@
     <title>openAssets</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
+
+
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
     <!-- build:css({.tmp/serve,src}) styles/vendor.css -->
@@ -21,27 +23,36 @@
   </head>
   <body>
     <!--[if lt IE 10]>
-      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-    <nav class="navbar navbar-static-top navbar-inverse">
-    <div class="container-fluid">
+
+    <header class="navbar navbar-default navbar-inverse">
+    <div class="container">
       <div class="navbar-header">
-        <a class="navbar-brand" >
-          <span class="glyphicon glyphicon-home"></span>GenerateWallet</a>
+        <button type="button" class="navbar-toggle" data-toggle="collapse" ng-click="isCollapsed = !isCollapsed">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand visible-xs" href="/#/">GenerateWallet</a>
       </div>
-
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-6">
-        <ul class="nav navbar-nav">
-          <li><a ng-href="#/">Generate</a></li>
-          <li><a ng-href="#/scan">Scan</a></li>
-        </ul>
-
-        <ul class="nav navbar-nav navbar-right acme-navbar-text">
-          <li>Application was created {{ vm.relativeDate }}.</li>
+      <nav class="hidden-xs">
+      <ul class="nav navbar-nav">
+        <li><a href="/#/" class="navbar-brand">GenerateWallet</li>
+        <li><a href="/#/">WalletGenerate</a></li>
+        <li><a href="/#/scan">Scanner</a></li>
       </ul>
+      </nav>
+      <nav class="visible-xs"  uib-collapse="!isCollapsed">
+      <ul class="nav navbar-nav" ng-if="isCollapsed">
+          <li><a href="/#/" ng-click="isCollapsed = !isCollapsed">WalletGenerate</a></li>
+          <li><a href="/#/scan" ng-click="isCollapsed = !isCollapsed">Scanner</a></li>
+        </ul>
+      </nav>
     </div>
-  </div>
-</nav>
+    </header>
+
 
     <div ui-view></div>
 

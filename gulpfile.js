@@ -8,6 +8,10 @@
 
 var gulp = require('gulp');
 var wrench = require('wrench');
+var rimraf = require('rimraf');
+var del = require('del');
+
+
 
 /**
  *  This will load all js or coffee files in the gulp directory
@@ -19,11 +23,28 @@ wrench.readdirSyncRecursive('./gulp').filter(function(file) {
   require('./gulp/' + file);
 });
 
+gulp.task('lib', function() {
+  return gulp.src([
+    'src/app/lib/*.js'])
+    .pipe(gulp.dest('dist/app/lib/'));
+});
 
+
+gulp.task('clean', function(cb){
+  del(['dist'],cb);
+});
+
+gulp.task('fonts', function() {
+  return gulp.src([
+    'bower_components/bootstrap-sass-official/assets/fonts/bootstrap/*'])
+    .pipe(gulp.dest('dist/fonts/'));
+});
 /**
  *  Default task clean temporaries directories and launch the
  *  main optimization build task
  */
-gulp.task('default', ['clean'], function () {
+gulp.task('default', ['clean','lib','fonts'], function () {
   gulp.start('build');
 });
+
+
